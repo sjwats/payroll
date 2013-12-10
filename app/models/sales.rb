@@ -1,19 +1,19 @@
 require'csv'
-require 'pry'
+
 class Sales
   attr_reader :monthly_sales  #allows monthly sales to be available to Owner class
 
-  def initialize
-    @monthly_sales = []
-  end
+  #def initialize
+  #  @monthly_sales = []
+  #end
 
   def self.monthly_sales
     @monthly_sales = []
   end
 
   def self.read_in_sales
-
-    CSV.foreach('sales_data.csv', headers: true) do |row|
+    self.monthly_sales
+    CSV.foreach('db/Data/sales_data.csv', headers: true) do |row|
 
       @monthly_sales << row.to_hash
     end

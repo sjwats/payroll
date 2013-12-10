@@ -1,4 +1,4 @@
-require 'pry'
+
 class Owner < Employee
   def gross_pay
     (@base_pay / 12) + commission

@@ -1,6 +1,4 @@
 #require_relative 'sales'
-require 'pry'
-
 class Commission < Employee
   #the initialize method is inherited from Employee which along with attr_reader
   #allows us to instantiate each new Commission employee with the same

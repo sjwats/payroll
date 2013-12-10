@@ -1,1 +1,35 @@
-<p>List your employees here</p>
+<!-- employees view -->
+<h1>Employee List </h1> </br>
+<% @employees.each do |employee| %>
+  <%if employee.pay_structure == 'owner' %>
+  <ul>
+    <li><bold><h2><%=employee.first_name%> <%=employee.last_name%></h2></bold></li>
+      <p>Title: <%=employee.title%></br>
+      Salary: <%=employee.base_pay%></br>
+      Net Pay: <%=employee.net_pay%></br>
+      </p>
+  </ul>
+  </br>
+  <%elsif employee.pay_structure == 'commission' || employee.pay_structure == 'quota' %>
+    <ul>
+    <li><bold><font color=#0B6121><%=employee.first_name%> <%=employee.last_name%></font></bold></li>
+      <p>Title: <%=employee.title%></br>
+      Salary: <%=employee.base_pay%></br>
+      Net Pay: <%=employee.net_pay%></br>
+      </p>
+    </ul>
+  </br>
+  <%else%>
+    <ul>
+    <li><%=employee.first_name%> <%=employee.last_name%></li>
+      <p>Title: <%=employee.title%></br>
+      Salary: <%=employee.base_pay%></br>
+      Net Pay: <%=employee.net_pay%></br>
+      </p>
+    </ul>
+  </br>
+  <%end%>
+
+<%end%>
+
+
